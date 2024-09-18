@@ -1,0 +1,15 @@
+services:
+    react:
+        build:
+            context: ..
+            dockerfile: frontend/docker/Dockerfile
+        image: react-app
+        container_name: react_app
+        ports:
+            - "3000:80"
+        networks:
+            - app-network
+
+networks:
+    app-network:
+        driver: bridge
